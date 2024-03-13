@@ -9,7 +9,7 @@ const { readFileSync } = require('fs');
 
 const PORT = 443;
 const HOST ='localhost';
-const URL = 'mongodb+srv://amoghasdodawad:@cluster0.mmjn3cr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"';
+const URL = 'mongodb+srv://amoghasdodawad:Amogh123@cluster0.mmjn3cr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"';
 const app = express();
 
 app.use(cors());
