@@ -1,16 +1,21 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const http = require('http');
+const https = require('https');
 const { Server } = require("socket.io");
 const { connectToDB } = require("./db/db");
 const { Chats } = require('./models/models');
+const { readFileSync } = require('fs');
 
 const PORT = 1001;
 const HOST = 'localhost';
 const URL = 'mongodb+srv://amoghasdodawad:@cluster0.mmjn3cr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 app.use(cors());
-const server = http.createServer(app);
+const credentials = {
+    key : readFileSync('./certificates/server.key'),
+    cert : readFileSync('./certificates/server.pem')
+}
+const server = https.createServer(credentials,app);
 const users = {};
 
 const io = new Server(server, {

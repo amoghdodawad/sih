@@ -4,7 +4,7 @@ import Messages from './Messages';
 import { useSelector } from 'react-redux';
 import './Chats.css'
 import Categories from './Categories';
-const socket = io.connect('http://localhost:1001');
+const socket = io.connect('https://16.171.7.191:1001');
 
 export default function Chat({ index, text, changeSelected }) {
     // console.log(index,text);
