@@ -7,7 +7,8 @@ const { connectToDB } = require("./db/db");
 const { Chats } = require('./models/models');
 
 const PORT = 1001;
-const URL = 'mongodb://127.0.0.1:27017/sih2023';
+const HOST = 'localhost';
+const URL = 'mongodb+srv://amoghasdodawad:@cluster0.mmjn3cr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 app.use(cors());
 const server = http.createServer(app);
 const users = {};
@@ -59,6 +60,6 @@ io.on("connection", (socket) => {
     await connectToDB(URL);
 })();
 
-server.listen(PORT, () => {
+server.listen(PORT, HOST, () => {
     console.log("SERVER IS RUNNING");
 });

@@ -37,7 +37,7 @@ const Body = () => {
 
     useEffect(() => {
         async function verify() {
-            const response = await fetch('http://localhost:8080/verify', {
+            const response = await fetch('/verify', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json; charset=UTF-8',

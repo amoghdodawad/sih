@@ -34,7 +34,7 @@ const Login = ({ changeStatus }) => {
         if(!isSignInForm) {
             // Sign up logic
             async function signUp(){
-                const response = await fetch('http://localhost:8080/signup',{
+                const response = await fetch('/signup',{
                     method : 'POST',
                     body : JSON.stringify({
                         username : name.current.value,
@@ -67,7 +67,7 @@ const Login = ({ changeStatus }) => {
         } else {
             // Sign in logic
             async function signIn(){
-                const response = await fetch('http://localhost:8080/login',{
+                const response = await fetch('/login',{
                     method : 'POST',
                     body : JSON.stringify({
                         email : email.current.value,

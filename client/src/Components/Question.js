@@ -18,7 +18,7 @@ const Questions = ({ index, changeSelected, text }) => {
     useEffect(()=>{
         async function fetchData(){
             // console.log('fetching ',index);
-            const data = await fetch(`http://localhost:8080/exam/${index}`);
+            const data = await fetch(`/exam/${index}`);
             // console.log('fetched ',index);
             const json = await data.json();
             // console.log(data);
@@ -73,7 +73,7 @@ const Questions = ({ index, changeSelected, text }) => {
         console.log(answersToBeSent);
         // for()
         async function submit(){
-            const response = await fetch(`http://localhost:8080/submitexam/${index}`,{
+            const response = await fetch(`/submitexam/${index}`,{
                 method : 'POST',
                 body : JSON.stringify({
                     email : email,
