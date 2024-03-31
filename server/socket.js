@@ -8,8 +8,8 @@ const { Chats } = require('./models/models');
 const { readFileSync } = require('fs');
 
 const PORT = 1001;
-const HOST = '16.171.7.191';
-const URL = 'mongodb+srv://amoghasdodawad:@cluster0.mmjn3cr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const HOST = 'sih.amoghasdodawad.dev';
+const URL = 'mongodb+srv://amoghasdodawad:Amogh123@cluster0.mmjn3cr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 app.use(cors());
 const credentials = {
     key : readFileSync('./certificates/server.key'),
