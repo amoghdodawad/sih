@@ -1,5 +1,5 @@
-const { verify } = require('jsonwebtoken');
-const { signUp, logIn, getQuestions, submitExam } = require('../controllers/controllers');
+// const { verify } = require('jsonwebtoken');
+const { signUp, logIn, getQuestions, submitExam, verify } = require('../controllers/controllers');
 
 const router = require('express').Router();
 router.post('/signup',signUp);

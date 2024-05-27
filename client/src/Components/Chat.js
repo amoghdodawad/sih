@@ -4,7 +4,7 @@ import Messages from './Messages';
 import { useSelector } from 'react-redux';
 import './Chats.css'
 import Categories from './Categories';
-const socket = io.connect('https://sih.amoghasdodawad.dev:1001');
+const socket = io.connect('/sockets', { path: '/socket' });
 
 export default function Chat({ index, text, changeSelected }) {
     // console.log(index,text);
@@ -51,6 +51,7 @@ export default function Chat({ index, text, changeSelected }) {
     socket.on('join_conf', (data) => {
         // console.log(data);
         // console.log('joined ',index);
+        console.log('Here');
         const temp = data.map(d =>
             JSON.parse(JSON.stringify({
                 name: d.name,
@@ -58,7 +59,7 @@ export default function Chat({ index, text, changeSelected }) {
                 sentByMe: false
             }))
         )
-        // console.log(temp);
+        console.log(temp);
         setMessageReceived([...messageReceived, ...temp]);
         // console.log(data);
     })
